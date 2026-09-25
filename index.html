@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Favorite Guy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars"></div>
+<div id="toast"></div>
+
+<main>
+  <!-- 1. ENVELOPE -->
+  <section class="screen active" id="s1">
+    <div class="hero">
+      <div class="eyebrow">A LITTLE SOMETHING FOR YOU</div>
+      <h1>Happy Birthday!<br><span>My Favorite Guy</span></h1>
+      <p>Ada pesan spesial nih, mau tahu apa?<br>Ayo tekan tanda panahnya!</p>
+
+      <div class="envelope-wrap">
+        <div class="envelope">
+          <div class="paper"></div>
+          <div class="flap"></div>
+          <div class="seal">R</div>
+        </div>
+      </div>
+
+      <button class="gold-arrow" onclick="go(2)" aria-label="Buka pesan">→</button>
+      <div class="hint">Teaser · Tekan tombol di surat...</div>
+    </div>
+  </section>
+
+  <!-- 2. DIARY -->
+  <section class="screen" id="s2">
+    <div class="diary-screen">
+      <div class="section-label">A PRIVATE LITTLE SECRET</div>
+      <h2>My Secret Diary</h2>
+      <p>Rahasia sih ... tapi khusus untuk kamu, kamu boleh baca! ^^<br>Ketuk buku untuk memutar kuncinya & membacanya.</p>
+
+      <div class="diary" id="diary" onclick="unlockDiary()">
+        <div class="book-cover">
+          <div class="corner c1"></div><div class="corner c2"></div>
+          <div class="book-title">My Secret Diary</div>
+          <div class="book-sub">PRIVATE · 2026</div>
+          <div class="lock">
+            <div class="keyhole"></div>
+          </div>
+          <div class="clasp"></div>
+        </div>
+        <div class="floating-key" id="key">✦</div>
+      </div>
+
+      <button class="text-btn" onclick="unlockDiary()">Putar Kunci</button>
+      <div class="hint">Klik buku untuk membuka</div>
+    </div>
+  </section>
+
+  <!-- 3. LETTER -->
+  <section class="screen" id="s3">
+    <div class="letter-screen">
+      <div class="open-book">
+        <div class="left-cover">
+          <div class="cover-lines"></div>
+          <div class="cover-mark">R</div>
+          <span>MY SECRET<br>DIARY</span>
+        </div>
+        <article class="paper-page">
+
+  <div class="date">27 September 2026</div>
+  <h2>HAII! HAPPY BIRTHDAY!!</h2>
+  <div class="tiny-star">✦</div>
+  <p>Kalau dipikir-pikir lucu juga ya. Kita kan awalnya cuma temen sekelompok KKN, dan pas masih di posko juga nggak yang deket-deket banget wkwk.</p>
+  <p>Malah setelah KKN selesai, entah gimana ceritanya kita jadi lebih sering ngobrol, saling ganggu, bahas hal random, sampai akhirnya jadi kebiasaan yang ternyata aku suka.</p>
+  <p>Aku juga nggak tahu sejak kapan ngobrol sama kamu jadi salah satu hal yang aku tunggu. Tapi ya... ternyata ada aja hal kecil dari kamu yang bikin hari jadi sedikit lebih seru.</p>
+  <p>Di hari ulang tahunmu ini, aku cuma mau bilang semoga kamu selalu sehat, bahagia, dan dimudahkan buat ngejar apa pun yang lagi kamu usahain. Semoga tahun ini banyak hal baik yang datang ke kamu.</p>
+  <p>Thank you for being you, dan thank you juga karena somehow kita bisa jadi sedeket ini setelah KKN wkwk. Jangan tiba-tiba jadi orang asing ya, aku masih mau gangguin kamu. ✦</p>
+  <div class="signature">— someone who enjoys having you around ♡</div>
+</article>
+
+      </div>
+      <button class="next-btn" onclick="go(4)">Lanjutkan cerita →</button>
+    </div>
+  </section>
+
+  <!-- 4. MEMORIES -->
+  <section class="screen" id="s4">
+    <div class="memory-screen">
+      <div class="section-label">DIGITAL SCRAPBOOK</div>
+      <h2>Our Memories</h2>
+      <p>Geser2 fotonya buat interaksi kecil xixix :>
+
+      <div class="memory-board" id="memoryBoard">
+        <div class="tape tape1"></div>
+        <div class="tape tape2"></div>
+        <div class="moon">☾</div>
+
+        <div class="polaroid p1 draggable" draggable="true">
+          <div class="photo photo1">
+            <img src="photo1.jpeg" alt="Photo 1">
+          </div>
+          <span>Essih foto kecilnya :></span>
+        </div>
+
+        <div class="polaroid p2 draggable" draggable="true">
+          <div class="photo photo2">
+            <img src="photo2.jpeg" alt="Photo 2">
+          </div>
+          <span>Anjazzz foto photobooth pertama kita:p</span>
+        </div>
+
+        <div class="polaroid p3 draggable" draggable="true">
+          <div class="photo photo3">
+            <img src="poto3.jpg" alt="Photo 3">
+          </div>
+          <span>essih mode akrab sm bocil</span>
+        </div>
+      </div>
+      <div class="drop-note">✦ Drag the photos around ✦</div>
+      <button class="next-btn" onclick="go(5)">Next memory →</button>
+    </div>
+  </section>
+
+  <!-- 5. CAKE -->
+  <section class="screen" id="s5">
+    <div class="cake-screen">
+      <div class="section-label">MAKE A WISH</div>
+      <h2>Time for Cake!</h2>
+      <p>Kuenya versi ini dulu ya. tapi tetep lucu, kan? 🧁</p>
+
+      <div class="cake-stage" id="cakeStage">
+        <div class="cake-container" id="cakeContainer">
+          <div class="slice-line" id="sliceLine"></div>
+          <div class="cake-wrapper">
+            <div class="cake cake-left">
+              <div class="candles"><i></i><i></i><i></i></div>
+              <div class="tier top"></div>
+              <div class="tier mid"></div>
+              <div class="tier bottom"></div>
+              <div class="cake-stars">✦ ✧ ✦</div>
+            </div>
+            <div class="cake cake-right">
+              <div class="candles"><i></i><i></i><i></i></div>
+              <div class="tier top"></div>
+              <div class="tier mid"></div>
+              <div class="tier bottom"></div>
+              <div class="cake-stars">✦ ✧ ✦</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="slice-btn" onclick="sliceCake()">Slice the Cake</button>
+      <button class="next-btn hidden" id="cakeNext" onclick="go(6)">Collect the wishes →</button>
+    </div>
+  </section>
+
+  <!-- 6. WISHES -->
+  <section class="screen" id="s6">
+    <div class="wish-screen">
+      <div class="section-label">SIX LITTLE WISHES</div>
+      <h2>Floating Wishes</h2>
+      <p>Klik semua kristal untuk mengumpulkan pesan kecilnya.</p>
+
+      <div class="crystal-field" id="crystals">
+        <button class="crystal" data-wish="Stay Happy" onclick="collectWish(this)">◇</button>
+        <button class="crystal" data-wish="Stay Healthy" onclick="collectWish(this)">✦</button>
+        <button class="crystal" data-wish="Dream Big" onclick="collectWish(this)">◆</button>
+        <button class="crystal" data-wish="Be Successful" onclick="collectWish(this)">✧</button>
+        <button class="crystal" data-wish="Always Loved" onclick="collectWish(this)">✦</button>
+        <button class="crystal" data-wish="Forever Us" onclick="collectWish(this)">◇</button>
+      </div>
+
+      <div class="counter">☾ &nbsp; Wishes Collected: <b id="wishCount">0</b>/6</div>
+      <button class="next-btn hidden" id="wishNext" onclick="go(7)">One last thing... →</button>
+    </div>
+  </section>
+
+  <!-- 7. GIFT -->
+  <section class="screen" id="s7">
+    <div class="gift-screen">
+      <div class="section-label">THE LAST SURPRISE</div>
+      <h2>Satu Hal Lagi...</h2>
+
+      <div id="giftContainer">
+        <div class="mechanical-gift" onclick="openGift()">
+          <div class="gear g1">⚙</div><div class="gear g2">⚙</div>
+          <div class="gift-box">
+            <div class="blue-light"></div>
+            <div class="band"></div>
+            <div class="crest">R</div>
+            <div class="tag">For You</div>
+          </div>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <p id="giftHint">Klik kotaknya untuk membuka.</p>
+      </div>
+
+      <div class="final-message hidden" id="finalMessage">
+        <div class="final-star">✦</div>
+        <h3>Happy Birthday, Babe! ♡</h3>
+        <p>Semoga tahun ini membawa banyak hal baik, banyak cerita baru, dan lebih banyak alasan untuk bahagia.</p>
+        <button onclick="restart()">Replay from the beginning</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
